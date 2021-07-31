@@ -5,7 +5,7 @@ import MyBotton from '../drawer/MyBotton';
 export default function HomeScreen(props) {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text style={{fontSize:20}}>Home Screen</Text>
+        <Text style={{fontSize:20}}>HomeScreen</Text>
         <MyBotton props={props}/>
       </View>
     );
