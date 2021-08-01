@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Product() {
+export default function Product({product : {id, name, productType, image, price, rating, description}}) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -59,13 +59,13 @@ export default function Product() {
         action={
          <Typography 
             className={classes.action}
-             variant='h7'
+             variant='h6'
              color='textSrcondary'>
-            {accounting.formatMoney(50,"Lps")}
+            {accounting.formatMoney(price,"Lps")}
          </Typography>
         }
         title="Blusa  DPL"
-        subheader="in Stock"
+        subheader="Disponible"
       />
       <CardMedia
         className={classes.media}

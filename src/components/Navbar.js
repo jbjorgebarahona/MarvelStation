@@ -8,6 +8,8 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Logo from "../assets/logomarvel.png"
+import { ShoppingCart } from '@material-ui/icons';
+import { Badge } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -15,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: "7rem",
     },
     appBar: {
-      backgroundColor: "whitesmoke",
+      backgroundColor: "#000000",
       boxShadow: "none",
     },
     grow: {
@@ -23,11 +25,12 @@ const useStyles = makeStyles((theme) => ({
     },
     button: {
       marginLeft: theme.spacing(2),
+      
     },
     image: {
       marginRight: "10px",
       height:"2rem",
-      
+
     },
   }));
 
@@ -36,15 +39,30 @@ export default function Navbar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="fixed" style={{ background: '#000000' }} >
+      <AppBar position="fixed" className={classes.appBar} >
         <Toolbar >
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
           <img src={Logo} className={classes.image}/>
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            News
+          <div className={classes.grow}/>
+          <Typography variant="h6" >
+            bienvenido, Invitado
           </Typography>
-          <Button color="inherit">Login</Button>
+          
+          <div className={classes.button}>
+              <Button variant="outlined"  style={{ background: '#ffffff' }}> 
+               Sing In
+                </Button>
+                <IconButton aria-label="show cart Items" color="inherit">
+                    <Badge badgeContent={2} color="secondary">
+                        <ShoppingCart fontSize="large" />
+                    </Badge>
+                    
+                    </IconButton>
+                
+
+                
+          </div>
         </Toolbar>
       </AppBar>
     </div>
