@@ -10,6 +10,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Logo from "../assets/logomarvel.png"
 import { ShoppingCart } from '@material-ui/icons';
 import { Badge } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -41,9 +42,11 @@ export default function Navbar() {
     <div className={classes.root}>
       <AppBar position="fixed" className={classes.appBar} >
         <Toolbar >
+          <Link to="/">
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
           <img src={Logo} className={classes.image}/>
           </IconButton>
+          </Link>
           <div className={classes.grow}/>
           <Typography variant="h6" >
             bienvenido, Invitado
@@ -53,13 +56,14 @@ export default function Navbar() {
               <Button variant="contained" color="secondary" style={{ background: '#E42B06' }}> 
                Sing In
                 </Button>
-                <IconButton aria-label="show cart Items" color="inherit">
+                <Link to="checkout-page">
+                <IconButton aria-label="show cart Items" color="inherit"  style={{ color: '#FFFFFF' }}>
                     <Badge badgeContent={2} color="secondary">
                         <ShoppingCart fontSize="large" />
                     </Badge>
                     
                     </IconButton>
-                
+                </Link>
 
                 
           </div>
