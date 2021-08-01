@@ -50,7 +50,7 @@ export default function Navbar() {
           </Typography>
           
           <div className={classes.button}>
-              <Button variant="outlined"  style={{ background: '#ffffff' }}> 
+              <Button variant="contained" color="secondary" style={{ background: '#E42B06' }}> 
                Sing In
                 </Button>
                 <IconButton aria-label="show cart Items" color="inherit">
