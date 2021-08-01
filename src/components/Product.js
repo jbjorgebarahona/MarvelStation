@@ -15,6 +15,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import { AddShoppingCart } from '@material-ui/icons';
 import accounting from 'accounting';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
@@ -42,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
   expandOpen: {
     transform: "rotate(180deg)",
   },
+
 }));
 
 export default function Product({product : {id, name, productType, image, price, rating, description}}) {
@@ -53,33 +55,38 @@ export default function Product({product : {id, name, productType, image, price,
   };
 
   return (
-    <Card className={classes.root}>
-      <CardHeader
-   
+    <Card className={classes.root} style={{backgroundColor: "#1c1b1b",color: '#ffffff'}}>
+      <CardHeader style={{ color: '#ffffff' }}
+        
         action={
          <Typography 
+            style={{ color: '#ffffff' }}
             className={classes.action}
              variant='h6'
              color='textSrcondary'>
             {accounting.formatMoney(price,"Lps")}
+            
          </Typography>
         }
-        title="Blusa  DPL"
-        subheader="Disponible"
+        title={name}
+        
+        
+        subheader={<Typography  style={{ color: '#ffffff' }}>Disponible</Typography>}
+       
       />
       <CardMedia
         className={classes.media}
-        image="https://images-na.ssl-images-amazon.com/images/I/71d9IuS49bL._AC_UL1500_.jpg"
-        title="Camisa Mujer DeadPool"
+        image={image}
+        title={name}
       />
       <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          Camisa de Mujer de Deadpool
+        <Typography variant="body2" color="textSecondary" component="p" style={{ color: '#ffffff' }}>
+          {productType}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
         <AddShoppingCart  fontSize='Large'/>
-        {Array(4)
+        {Array(rating)
        .fill()
        .map((_,i)=> (
          <p>&#11088;</p>
@@ -88,19 +95,21 @@ export default function Product({product : {id, name, productType, image, price,
        )
        }
         <IconButton
+          style={{ color: '#ffffff' }}
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,
           })}
           onClick={handleExpandClick}
           aria-expanded={expanded}
           aria-label="show more"
+          
         >
           <ExpandMoreIcon />
         </IconButton>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>"Camisa Mujer de Algodon Manga corta"</Typography>
+          <Typography paragraph>{description}</Typography>
           
           
         

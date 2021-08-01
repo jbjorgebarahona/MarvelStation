@@ -15,7 +15,7 @@ const products = [{
         name: "Sueter Unisex Spiderman",
         productType: "Sueter",
         price: 500,
-        rating: 4,
+        rating: 5,
         image: "https://ae01.alicdn.com/kf/HTB18a8mBb9YBuNjy0Fgq6AxcXXay/Oto-o-Jersey-capucha-de-oto-o-Cardigan-su-ter-estampado-Cosplay-fiesta-de-superh-roes.jpg_Q90.jpg_.webp",
         description: "Camiseta de algodon Mujer de Deadpool"
 
@@ -39,7 +39,7 @@ const products = [{
         name: "Camisa Nino HULK",
         productType: "Camisa",
         price: 200,
-        rating: 4,
+        rating: 3,
         image: "https://m.media-amazon.com/images/I/61QawL-ZUML._AC_UL320_.jpg",
         description: "Camiseta de algodon Mujer de Deadpool"
 
