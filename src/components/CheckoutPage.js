@@ -8,7 +8,7 @@ import CheckoutCard from "./CheckoutCard";
 import products from "../product-data";
 import Product from "./Product";
 import Total from "./Total";
-import { useStateValue } from '../StateProvider';
+import { useStateValue } from "../StateProvider";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -17,9 +17,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const CheckoutPage = () => {
-   
   const classes = useStyles();
- const [{basket},dispatch] = useStateValue();
+  const [{basket},dispatch] = useStateValue();
 
   function FormRow() {
     return (

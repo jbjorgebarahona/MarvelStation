@@ -10,30 +10,28 @@ import CheckoutPage from './src/components/CheckoutPage';
 import CheckoutCard from './src/components/CheckoutCard';
 import Typography from '@material-ui/core/Typography';
 import { Switch,BrowserRouter as Router, Route } from 'react-router-dom';
-
+import { StateProvider } from './src/StateProvider';
+import reducer, { initialState } from "./src/reducer";
+ 
 export default function App() {
-  return (
-    <Router>
+ return (
+   <StateProvider initialState={initialState} reducer={reducer}>
+     <Router>
        <View style={{backgroundColor: "#3F3E3E"}}>
-      <Navbar/>
-     <Switch>
-     <Route path="/checkout-page"> 
-        
-          <CheckoutPage/>
-       </Route>
-       <Route path="/"> 
-        <Typography align='center' gutterBottom variant='h4'>
-                Carrito
-          </Typography>
-          <Products />
-       </Route>
-     </Switch>
-      
-     
-     
-     
-      </View>
-    </Router>
-  );
+       <Navbar/>
+       <Switch>
+         <Route path="/checkout-page">
+         <CheckoutPage/>
+         </Route>
+         <Route path="/">
+           <Typography align='center' gutterBottom variant='h4'>
+                   Marvel Station
+             </Typography>
+             <Products />
+         </Route>
+       </Switch>
+       </View>
+     </Router>
+   </StateProvider>
+ );
 }
-
