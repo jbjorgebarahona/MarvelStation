@@ -53,9 +53,11 @@ export default function Navbar() {
           </Typography>
           
           <div className={classes.button}>
+            <Link to="/singin">
               <Button variant="contained" color="secondary" style={{ background: '#E42B06' }}> 
                Sing In
                 </Button>
+                </Link>
                 <Link to="checkout-page">
                 <IconButton aria-label="show cart Items" color="inherit"  style={{ color: '#FFFFFF' }}>
                     <Badge badgeContent={basket?.length} color="secondary">

@@ -12,6 +12,8 @@ import Typography from '@material-ui/core/Typography';
 import { Switch,BrowserRouter as Router, Route } from 'react-router-dom';
 import { StateProvider } from './src/StateProvider';
 import reducer, { initialState } from "./src/reducer";
+import SignIn from './src/Singin';
+import SignUp from './src/Singup';
  
 export default function App() {
  return (
@@ -20,6 +22,14 @@ export default function App() {
        <View style={{backgroundColor: "#3F3E3E"}}>
        <Navbar/>
        <Switch>
+       <Route path="/singin">
+           
+            <SignIn/>
+         </Route>
+         <Route path="/singup">
+           
+            <SignUp/>
+         </Route>
          <Route path="/checkout-page">
          <CheckoutPage/>
          </Route>
