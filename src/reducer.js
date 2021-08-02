@@ -1,13 +1,10 @@
 export const initialState = {
     basket: [],
-
 };
 
 export const actionTypes = {
     ADD_TO_BASKET: "ADD_TO_BASKET",
-
 };
-
 
 const reducer = (state, action) => {
     console.log(action);
@@ -17,7 +14,6 @@ const reducer = (state, action) => {
                 ...state,
                 basket: [...state.basket, action.item],
             };
-
         default:
             return state;
     }
