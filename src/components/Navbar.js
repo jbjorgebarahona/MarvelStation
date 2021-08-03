@@ -41,13 +41,12 @@ const useStyles = makeStyles((theme) => ({
 export default function Navbar() {
   const classes = useStyles();
   const [{basket,user},dispatch] = useStateValue();
-  
-
+console.log(user);  
   return (
     <div className={classes.root}>
       <AppBar position="fixed" className={classes.appBar} >
         <Toolbar >
-          <Link to="/">
+          <Link to="/product">
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
           <img src={Logo} className={classes.image}/>
           </IconButton>
@@ -58,7 +57,7 @@ export default function Navbar() {
           </Typography>
           
           <div className={classes.button}>
-            <Link to="/singin">
+            <Link to="/">
               <Button variant="contained" color="secondary" style={{ background: '#E42B06' }}> 
                               {user? "Sing Out" :"Sing In"}
                 </Button>

@@ -47,9 +47,9 @@ export default function App() {
        <View style={{backgroundColor: "#3F3E3E"}}>
        <Navbar/>
        <Switch>
-       <Route path="/singin">
+       <Route path="/product">
            
-            <SignIn/>
+            <Products/>
          </Route>
          <Route path="/singup">
            
@@ -62,7 +62,7 @@ export default function App() {
            <Typography align='center' gutterBottom variant='h4'>
                    Marvel Station
              </Typography>
-             <Products />
+             <SignIn />
          </Route>
        </Switch>
        </View>
