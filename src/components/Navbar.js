@@ -12,6 +12,9 @@ import { ShoppingCart } from '@material-ui/icons';
 import { Badge } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { useStateValue } from "../StateProvider";
+import { actionTypes } from '../reducer';
+import reducer from '../reducer';
+
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
@@ -37,7 +40,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Navbar() {
   const classes = useStyles();
-  const [{basket},dispatch] = useStateValue();
+  const [{basket,user},dispatch] = useStateValue();
+  
+
   return (
     <div className={classes.root}>
       <AppBar position="fixed" className={classes.appBar} >
@@ -49,13 +54,13 @@ export default function Navbar() {
           </Link>
           <div className={classes.grow}/>
           <Typography variant="h6" >
-            bienvenido, Invitado
+            bienvenido, {user ? user.email : "invitado"}
           </Typography>
           
           <div className={classes.button}>
             <Link to="/singin">
               <Button variant="contained" color="secondary" style={{ background: '#E42B06' }}> 
-               Sing In
+                              {user? "Sing Out" :"Sing In"}
                 </Button>
                 </Link>
                 <Link to="checkout-page">

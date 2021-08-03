@@ -54,14 +54,15 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
+
   const singup = (e) =>{
     e.preventDefault();
-    auth.createUserWithEmailAndPassword(email,password).then((auth)=>{
-      console.log(auth);
-      if(auth){
-        history
-      }
-    }).catch(err=>alert(err.message))
+    auth.createUserWithEmailAndPassword(email, password).then((auth) => {
+        console.log(auth);
+        if (auth) {
+          history.push("/");
+        }
+      }).catch((err) => alert(err.message));
   }
   return (
     <Container component="main" maxWidth="xs">
