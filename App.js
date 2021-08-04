@@ -13,7 +13,6 @@ import { StackNavigation } from './src/routes/StackNavigation';
       <StackNavigation />
     </NavigationContainer>
     
-    
   );
 }
 
