@@ -1,11 +1,19 @@
-import React from 'react';
-import {  Text, View } from 'react-native';
+import 'react-native-gesture-handler';
 
-export default function App() {
+import React from 'react';
+
+import {NavigationContainer} from '@react-navigation/native';
+import { StackNavigation } from './src/routes/StackNavigation';
+
+
+
+ const App = () => {
   return (
-    <View>
-      <Text>Hola</Text>
-    </View>
+    <NavigationContainer>
+      <StackNavigation />
+    </NavigationContainer>
+    
   );
 }
 
+export default App
