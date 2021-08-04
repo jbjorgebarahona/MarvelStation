@@ -1,26 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
+import 'react-native-gesture-handler';
+
 import React from 'react';
-import './src/App.css'
-import {  Text, View } from 'react-native';
-import Navbar from './src/components/Navbar';
-import Product from './src/components/Product';
-import Products from './src/components/Products';
-import { color } from 'react-native-reanimated';
-import CheckoutPage from './src/components/CheckoutPage';
-import CheckoutCard from './src/components/CheckoutCard';
 
-export default function App() {
+import {NavigationContainer} from '@react-navigation/native';
+import { StackNavigation } from './src/routes/StackNavigation';
+
+
+
+ const App = () => {
   return (
-   
-       <View style={{backgroundColor: "#3F3E3E"}}>
-
-      <Navbar/>
-      <CheckoutPage/>
-      {/*<CheckoutCard/>*/}
-      <Products />
-      {/*<Product/>*/}
-      </View>
+    <NavigationContainer>
+      <StackNavigation />
+    </NavigationContainer>
+    
     
   );
 }
 
+export default App
